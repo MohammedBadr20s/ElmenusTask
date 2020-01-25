@@ -35,7 +35,7 @@ class ItemDetailsVC: UIViewController {
         //MARK:- Expanding the current View Height
         if !self.ProductDescription.text.isEmpty {
             let contentSize = self.ProductDescription.sizeThatFits(self.ProductDescription.bounds.size)
-            self.currentViewHeight.constant = contentSize.height + 400
+            self.currentViewHeight.constant = contentSize.height + 500
         }
     }
     //MARK:- Function to get View Data

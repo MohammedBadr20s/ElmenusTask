@@ -27,10 +27,11 @@ class TagsCell: UICollectionViewCell {
             self.tagImageView.kf.setImage(with: ImageURL)
         }
         let fullTagName = TagName.components(separatedBy: "-")
+        //MARK:- if you want to use only the name of tag you can use fullTagName[1].trim() instead of tag name
         self.tagNameLabel.text = TagName
         if selected {
             self.customView.borderWidth = 1
-            self.customView.borderColor = .black
+            self.customView.borderColor = #colorLiteral(red: 0.8980392157, green: 0.3254901961, blue: 0.231372549, alpha: 1)
         } else {
             self.customView.borderWidth = 0
         }

@@ -52,7 +52,15 @@ class HomeVC: UIViewController {
         SVProgressHUD.show()
         bindTagsCollectionView()
         bindItemsCollectionView()
+        //MARK:- Checking for Network
+        if Reachability.isConnectedToNetwork() {
+            getTags(currentPage: 0)
+        } else {
+            displayMessage(title: "Error", message: "You Are Offline", status: .error, forController: self)
+        }
+
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //MARK:- Tags list shouldn't be sticky at the top of the screen (scrolls of the screen on scrolling if the content height > screen height)
@@ -60,20 +68,11 @@ class HomeVC: UIViewController {
             self.NestedViewHeight.constant = self.ItemCollectionView.contentSize.height
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        //MARK:- Checking for Network
-        if Reachability.isConnectedToNetwork() {
-            getTags(currentPage: 0)
-            
-        } else {
-            displayMessage(title: "Error", message: "You Are Offline", status: .error, forController: self)
-        }
-    }
     
 }
-//MARK:- Binding Functions
+//MARK:- Binding CollectionView Functions
 extension HomeVC {
+    
     //MARK:- Bind Tags Collection View
     func bindTagsCollectionView() {
         TagsCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -102,6 +101,7 @@ extension HomeVC {
             }
             }.disposed(by: disposeBag)
     }//END OF Bind Tags Collection View
+    
     //MARK:- Bind ItemsCollectionView
     func bindItemsCollectionView() {
         ItemCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -116,6 +116,7 @@ extension HomeVC {
             self.performSegue(withIdentifier: "showDetails", sender: nil)
             }.disposed(by: disposeBag)
     }//END OF Bind ItemsCollectionView
+    
     //MARK:- Prepare For Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ItemDetailsVC {
@@ -193,7 +194,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
         if scrollView == TagsCollectionView {
             if !stopLoadingMoreFlag && !loading {
                 let RightEdge = scrollView.contentOffset.x + (scrollView.frame.size.width)
-                if (RightEdge + CGFloat(self.currentTagPage) >= scrollView.contentSize.width - 100) {
+                if (RightEdge + CGFloat(self.currentTagPage) >= scrollView.contentSize.width - 150) {
                     // Load next batch of products
                     print("\(self.currentTagPage)")
                     self.loading = true
