@@ -1,0 +1,56 @@
+PODS:
+  - Alamofire (4.8.2)
+  - DataCache (1.5)
+  - IQKeyboardManagerSwift (6.3.0)
+  - Kingfisher (5.4.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - SVProgressHUD (2.2.5)
+  - SwiftMessages (6.0.2):
+    - SwiftMessages/App (= 6.0.2)
+  - SwiftMessages/App (6.0.2)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.8.2)
+  - DataCache
+  - IQKeyboardManagerSwift (~> 6.3.0)
+  - Kingfisher (~> 5.4.0)
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
+  - SVProgressHUD (~> 2.2.5)
+  - SwiftMessages (~> 6.0.2)
+  - SwiftyJSON (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - DataCache
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SVProgressHUD
+    - SwiftMessages
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  DataCache: 8099e01aa35c2fd30f3410aae14ef5a130f6524b
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  Kingfisher: 9c8f2cc6710334e06f32ba2b45e77707d5e2f0c9
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 4acd249feb3971384710c02dbee01de0a062c86c
+
+COCOAPODS: 1.8.4
