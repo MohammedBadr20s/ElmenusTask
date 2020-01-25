@@ -106,10 +106,13 @@ extension HomeVC {
     func bindItemsCollectionView() {
         ItemCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         ItemCollectionView.register(UINib(nibName: itemCellIdentifier, bundle: nil), forCellWithReuseIdentifier: itemCellIdentifier)
+        
+        //MARK:- Drawing the Items CollectionView Layout the equivalent of CellForItem in RxSwift
         homeViewModel.Items.bind(to: ItemCollectionView.rx.items(cellIdentifier: itemCellIdentifier, cellType: ItemsCell.self)) { index, element, cell in
             cell.config(ItemImageURL: self.Items[index].photoURL ?? "", ItemName: self.Items[index].name ?? "")
             }.disposed(by: disposeBag)
         
+        //MARK:- Selecting an item from Products CollectionView the equivalent of DidSelectAtRow in RxSwift
         ItemCollectionView.rx.itemSelected.bind { (indexPath) in
             print(self.Items[indexPath.row].name ?? "")
             self.current_index = indexPath.row
@@ -117,7 +120,7 @@ extension HomeVC {
             }.disposed(by: disposeBag)
     }//END OF Bind ItemsCollectionView
     
-    //MARK:- Prepare For Segue
+    //MARK:- Prepare For Details Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ItemDetailsVC {
             destination.product_URL = self.Items[current_index].photoURL ?? ""
