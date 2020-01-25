@@ -125,7 +125,7 @@ extension HomeVC {
         if let destination = segue.destination as? ItemDetailsVC {
             destination.product_URL = self.Items[current_index].photoURL ?? ""
             destination.product_description = self.Items[current_index].itemDescription ?? ""
-            destination.title = self.Items[current_index].name ?? ""
+            destination.product_Name = self.Items[current_index].name ?? ""
         }
     }//END OF Prepare For Segue
 }

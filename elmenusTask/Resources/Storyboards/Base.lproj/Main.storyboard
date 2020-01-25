@@ -177,19 +177,29 @@
                                                     <segue destination="BYZ-38-t0r" kind="custom" customClass="UnwindScaleSegue" customModule="elmenusTask" customModuleProvider="target" id="2gF-LN-Bbs"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnQ-oP-xYF">
+                                                <rect key="frame" x="70" y="5" width="334" height="45"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.8980392157" green="0.32549019610000002" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Gd8-z7-FdJ" firstAttribute="centerX" secondItem="UVK-bw-EkX" secondAttribute="centerX" id="6bc-NL-6Ek"/>
+                                            <constraint firstItem="Gd8-z7-FdJ" firstAttribute="top" secondItem="mnQ-oP-xYF" secondAttribute="bottom" constant="5" id="BbP-pw-LFW"/>
                                             <constraint firstAttribute="height" constant="700" id="CTh-B6-UCM"/>
                                             <constraint firstItem="sQT-8C-JOk" firstAttribute="top" secondItem="Gd8-z7-FdJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Ck0-6z-Ndd"/>
                                             <constraint firstItem="sQT-8C-JOk" firstAttribute="centerX" secondItem="Gd8-z7-FdJ" secondAttribute="centerX" id="N1O-Ns-lkV"/>
+                                            <constraint firstItem="mnQ-oP-xYF" firstAttribute="top" secondItem="UVK-bw-EkX" secondAttribute="top" constant="5" id="OD7-uJ-GYw"/>
                                             <constraint firstItem="JlE-so-Kgo" firstAttribute="top" secondItem="UVK-bw-EkX" secondAttribute="top" id="TTE-HH-vDD"/>
+                                            <constraint firstItem="mnQ-oP-xYF" firstAttribute="leading" secondItem="JlE-so-Kgo" secondAttribute="trailing" constant="10" id="YyL-xM-yxY"/>
                                             <constraint firstItem="sQT-8C-JOk" firstAttribute="width" secondItem="Gd8-z7-FdJ" secondAttribute="width" id="ahT-ZP-uwV"/>
                                             <constraint firstItem="JlE-so-Kgo" firstAttribute="leading" secondItem="UVK-bw-EkX" secondAttribute="leading" constant="10" id="bRo-Ol-2WZ"/>
                                             <constraint firstItem="Gd8-z7-FdJ" firstAttribute="width" secondItem="UVK-bw-EkX" secondAttribute="width" multiplier="0.95" id="ba2-CA-Xee"/>
                                             <constraint firstItem="Gd8-z7-FdJ" firstAttribute="top" secondItem="JlE-so-Kgo" secondAttribute="bottom" constant="5" id="crh-Ul-CHX"/>
                                             <constraint firstAttribute="bottom" secondItem="sQT-8C-JOk" secondAttribute="bottom" constant="20" symbolic="YES" id="oZw-eD-h8x"/>
+                                            <constraint firstAttribute="trailing" secondItem="mnQ-oP-xYF" secondAttribute="trailing" constant="10" id="xi4-Qg-CcO"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -217,6 +227,7 @@
                     <connections>
                         <outlet property="ProductDescription" destination="sQT-8C-JOk" id="5oR-ly-N4p"/>
                         <outlet property="ProductImageView" destination="Gd8-z7-FdJ" id="qYm-4p-0jw"/>
+                        <outlet property="ProductNameLabel" destination="mnQ-oP-xYF" id="wPk-md-COg"/>
                         <outlet property="currentViewHeight" destination="CTh-B6-UCM" id="Bop-Jl-loA"/>
                         <outlet property="imageHeight" destination="vr8-06-Oi1" id="8m7-NR-Gbp"/>
                         <outlet property="scrollView" destination="A5h-hB-5yc" id="zYH-NX-x2t"/>

@@ -16,19 +16,23 @@ class ItemDetailsVC: UIViewController {
     @IBOutlet weak var ProductImageView: UIImageView!
     @IBOutlet weak var ProductDescription: UITextView!
     @IBOutlet weak var currentViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var ProductNameLabel: UILabel!
     //MARK:- Properties
     let headerViewMaxHeight: CGFloat = 300
     let headerViewMinHeight: CGFloat = 30 + UIApplication.shared.statusBarFrame.height
     var product_description = String()
     var product_URL = String()
+    var product_Name = String()
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        ProductNameLabel.adjustsFontSizeToFitWidth = true
+        ProductNameLabel.minimumScaleFactor = 0.5
         scrollView.delegate = self
         // Do any additional setup after loading the view.
         //MARK:- Getting Data
-        getDetails(ProductImageURL: product_URL, ProductDescription: product_description)
+        getDetails(ProductImageURL: product_URL, ProductDescription: product_description, ProductName: product_Name)
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -39,11 +43,11 @@ class ItemDetailsVC: UIViewController {
         }
     }
     //MARK:- Function to get View Data
-    func getDetails(ProductImageURL: String, ProductDescription: String) {
+    func getDetails(ProductImageURL: String, ProductDescription: String, ProductName: String) {
         self.ProductDescription.text = ProductDescription
         let contentSize = self.ProductDescription.sizeThatFits(self.ProductDescription.bounds.size)
         self.ProductDescription.frame.size.height = contentSize.height
-        
+        self.ProductNameLabel.text = ProductName
         if ProductImageURL != "" {
             guard let imageURL = URL(string: ProductImageURL) else { return }
             self.ProductImageView.kf.setImage(with: imageURL)
